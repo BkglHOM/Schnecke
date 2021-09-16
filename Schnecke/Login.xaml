@@ -27,7 +27,7 @@
 
 
             <StackPanel VerticalAlignment="Center">
-                <Image Source="House.png" Width="80"/>
+                <Image Source="Images/House.png" Width="80"/>
                 <TextBlock Text="Schnecke"
                            FontWeight="Light"
                            FontFamily="helvetica"
@@ -83,8 +83,8 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button Width="100" Height="40" Content="LOGIN" Margin="60,0,60,0"/>
-                    <Button Width="100" Height="40" Content="REGISTER"/>
+                    <Button Width="100" Height="40" Content="Login" Margin="60,0,60,0"/>
+                    <Button Width="100" Height="40" Content="Register"/>
                 </StackPanel>
 
             </StackPanel>
