@@ -46,7 +46,7 @@ namespace Schnecke
             //zieht daten in die tabelle die C# rafft
             if (dt.Rows.Count==1)
             {
-                GlobaleVariablen.loginid=dt.Rows
+                GlobaleVariablen.loginid = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();

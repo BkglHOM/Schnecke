@@ -30,7 +30,8 @@ namespace Schnecke
 
         public MainWindow()
         {
-            query = "SELECT * FROM kunden ";
+            InitializeComponent();
+            query = "SELECT * FROM kunden WHERE idLogin != '"+GlobaleVariablen.loginid+ "'";
             //SQL abfrage   sucht passende user wo UN und PW passen
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, GlobaleVariablen.sqlconnection);
             //Genutzt um daten aus der DB zu ziehen   zieht alle die passen rein 
@@ -41,8 +42,17 @@ namespace Schnecke
 
 
 
+            Random rant = new Random();
+            int randomint = rant.Next(0, dt.Rows.Count);
 
-            InitializeComponent();
+            
+            match_name.Text ="Name: " + Convert.ToString(dt.Rows[randomint].ItemArray[1]);
+            match_alter.Text = "Alter: " + Convert.ToString(dt.Rows[randomint].ItemArray[3]);
+            match_hobby.Text = "Hobby: " + Convert.ToString(dt.Rows[randomint].ItemArray[6]);
+            match_bio.Text = "Bio: " + Convert.ToString(dt.Rows[randomint].ItemArray[5]);
+
+
+
         }
     }
 }
