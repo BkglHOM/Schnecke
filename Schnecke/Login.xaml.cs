@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Schnecke
 {
@@ -17,9 +19,44 @@ namespace Schnecke
     /// </summary>
     public partial class Login : Window
     {
+        
+        string query;
         public Login()
         {
+            
+
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Login Button
+            //mysqlcon = new MySqlConnection(GlobaleVariablen.sqlconnection);
+
+
+
+            query = "SELECT * FROM login WHERE Benutzername = '" + Username.Text.Trim() + "' AND Passwort = '" + Password.Password.Trim() + "'";
+            //SQL abfrage   sucht passende user wo UN und PW passen
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, GlobaleVariablen.sqlconnection);
+            //Genutzt um daten aus der DB zu ziehen   zieht alle die passen rein 
+            DataTable dt = new DataTable();
+            //Tabelle die die c# rafft
+            
+            dataAdapter.Fill(dt);
+            //zieht daten in die tabelle die C# rafft
+            if (dt.Rows.Count==1)
+            {
+                GlobaleVariablen.loginid=dt.Rows
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Falscher Login du Schnecke");
+            }
+
+
         }
     }
 }
