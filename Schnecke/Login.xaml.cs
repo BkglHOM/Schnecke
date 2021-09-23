@@ -67,17 +67,14 @@ namespace Schnecke
 
         private void UsernameFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            
+            MessageBox.Show("TESTO1");
 
    
         }
 
         private void UsernameKeyDown(object sender, KeyEventArgs e)
         {
-            if 
-            {
-
-            }
+            
         }
     }
 }
