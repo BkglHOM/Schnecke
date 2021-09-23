@@ -7,7 +7,11 @@
     },
     "additionalProbingPaths": [
       "C:\\Users\\fabianhom\\.dotnet\\store\\|arch|\\|tfm|",
+<<<<<<< Updated upstream
       "C:\\Users\\fabianhom\\.nuget\\packages",
+=======
+      "C:\\Users\\Dario\\.nuget\\packages",
+>>>>>>> Stashed changes
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
