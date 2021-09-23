@@ -44,6 +44,12 @@ namespace Schnecke
             
             dataAdapter.Fill(dt);
             //zieht daten in die tabelle die C# rafft
+            
+            
+            
+            
+                
+                
             if (dt.Rows.Count==1)
             {
                 GlobaleVariablen.loginid = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
@@ -57,6 +63,21 @@ namespace Schnecke
             }
 
 
+        }
+
+        private void UsernameFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            
+
+   
+        }
+
+        private void UsernameKeyDown(object sender, KeyEventArgs e)
+        {
+            if 
+            {
+
+            }
         }
     }
 }

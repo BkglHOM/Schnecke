@@ -44,7 +44,6 @@
                              FontWeight="Light"
                              Text="Username"
                              FontSize="20"
-                             HorizontalAlignment="Center"
                              Foreground="White"
                              Background="Transparent"
                              BorderThickness="0"
@@ -53,7 +52,8 @@
                              Opacity="0.5"
                              Height="25"
                              Margin="63,0,0,0"
-                             Name="Username"/>
+                             Name="Username" GotKeyboardFocus="UsernameFocus" KeyDown="UsernameKeyDown"
+                             />
                 </StackPanel>
                 <Border Width="250"
                         Height="2"
