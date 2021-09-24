@@ -67,7 +67,6 @@
                              FontWeight="Light"
                              Password="Password"
                              FontSize="20"
-                             HorizontalAlignment="Center"
                              Foreground="White"
                              Background="Transparent"
                              BorderThickness="0"
@@ -76,7 +75,7 @@
                              Opacity="0.5"
                              Height="25"
                              Margin="63,0,0,0"
-                             Name="Password"/>
+                             Name="Password" FocusableChanged="PasswordFocus" KeyDown="PasswordKeydown"/>
                 </StackPanel>
                 <Border Width="250"
                         Height="2"

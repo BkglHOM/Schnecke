@@ -23,8 +23,8 @@ namespace Schnecke
     /// </summary>
     public partial class MainWindow : Window
     {
-        MySqlConnection mysqlcon;
-        MySqlCommand mysqlcommand;
+       // MySqlConnection mysqlcon;
+       // MySqlCommand mysqlcommand;
 
         string query;
 
