@@ -79,6 +79,8 @@ namespace Schnecke
         }
         void loginlogik()
         {
+            
+
             //Login Button
             //mysqlcon = new MySqlConnection(GlobaleVariablen.sqlconnection);
 
@@ -88,9 +90,15 @@ namespace Schnecke
             //Genutzt um daten aus der DB zu ziehen   zieht alle die passen rein 
             DataTable dt = new DataTable();
             //Tabelle die die c# rafft
-
+            try
+            { 
             dataAdapter.Fill(dt);
             //zieht daten in die tabelle die C# rafft
+            }
+            catch
+            {
+                MessageBox.Show("Fehler bei der Datenbankanbindung Bitte im code deine login sachen schreiben");
+            }
 
             if (dt.Rows.Count == 1)
             {
