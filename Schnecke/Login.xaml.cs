@@ -84,7 +84,7 @@ namespace Schnecke
             //Login Button
             //mysqlcon = new MySqlConnection(GlobaleVariablen.sqlconnection);
 
-            query = "SELECT * FROM login WHERE Benutzername = '" + Username.Text.Trim() + "' AND Passwort = '" + Password.Password.Trim() + "'";
+            query = "SELECT * FROM kunden WHERE KundenUsername = '" + Username.Text.Trim() + "' AND KundenPW = '" + Password.Password.Trim() + "'";
             //SQL abfrage   sucht passende user wo UN und PW passen
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, GlobaleVariablen.sqlconnection);
             //Genutzt um daten aus der DB zu ziehen   zieht alle die passen rein 
@@ -111,6 +111,13 @@ namespace Schnecke
             {
                 MessageBox.Show("Falscher Login du Schnecke");
             }
+        }
+
+        private void Reg_Click(object sender, RoutedEventArgs e)
+        {
+            registrierung registrierung = new registrierung();
+            registrierung.Show();
+            this.Close();
         }
     }
 }

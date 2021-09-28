@@ -31,7 +31,7 @@ namespace Schnecke
         public MainWindow()
         {
             InitializeComponent();
-            query = "SELECT * FROM kunden WHERE idLogin != '"+GlobaleVariablen.loginid+ "'";
+            query = "SELECT * FROM kunden WHERE idKunden != '"+GlobaleVariablen.loginid+ "'";
             //SQL abfrage   sucht passende user wo UN und PW passen
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, GlobaleVariablen.sqlconnection);
             //Genutzt um daten aus der DB zu ziehen   zieht alle die passen rein 
