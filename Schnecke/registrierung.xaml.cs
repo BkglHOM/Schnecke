@@ -38,9 +38,9 @@ namespace Schnecke
             {
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Bitte Datum im YYYY-MM-DD format angeben");
                 
             }
            
