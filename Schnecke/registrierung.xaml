@@ -60,7 +60,7 @@
         <TextBox Grid.Column="1" HorizontalAlignment="Center"  Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Name="Wohnort"/>
         <TextBox Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Name="Hobby"/>
         <TextBox Grid.Column="3" HorizontalAlignment="Center"  Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Name="Bio" KeyDown="RegKwyDown"/>
-        <Button Content="Registrieren" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="320" Height="89" Name="RegButton" Click="FRig_Click"/>
+        <Button Content="Registrieren" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="320" Height="89" Name="RegButton" Click="FRig_Click" FontSize="18" BorderBrush="#FF00B3E8" Background="#FFAACFD3" FontFamily="Bahnschrift"/>
 
 
 

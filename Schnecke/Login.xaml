@@ -9,12 +9,17 @@
         
         >
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="61*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="88*"/>
             <ColumnDefinition Width="88*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="3">
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="3">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -32,7 +37,7 @@
 
 
             <StackPanel VerticalAlignment="Center">
-                <Image Source="Images/House.png" Width="80"/>
+                <Image Source="/Images/house.png" Width="80"/>
                 <TextBlock Text="Schnecke"
                            FontWeight="Light"
                            FontFamily="helvetica"

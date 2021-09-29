@@ -19,15 +19,16 @@
             <RowDefinition Height="3*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="111*"></ColumnDefinition>
             <ColumnDefinition Width="111*"></ColumnDefinition>
             <ColumnDefinition Width="111*"/>
-            <ColumnDefinition Width="111*"/>
-            <ColumnDefinition Width="111*"/>
-            <ColumnDefinition Width="149*"></ColumnDefinition>
-            <ColumnDefinition Width="206*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Border CornerRadius="10" Grid.RowSpan="6" Grid.ColumnSpan="6">
+        <Border Grid.RowSpan="6" Grid.ColumnSpan="7">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="Blue" Offset="0.0"/>
@@ -36,21 +37,56 @@
             </Border.Background>
 
         </Border>
-        <Button Content="TOP" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" RenderTransformOrigin="0.338,-0.033" Height="52" Width="95"/>
-        <Button Content="FLOP" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" RenderTransformOrigin="0.338,-0.033" Height="52" Width="95"/>
-        <Button Content="Einstellungen" Grid.Column="3" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" RenderTransformOrigin="0.338,-0.033" Height="52" Width="95"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,49,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.153,-0.206" Height="16" Width="203" Grid.ColumnSpan="2"
-                   Name="match_name"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" Text="Alter:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
-                   Name="match_alter"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,46,0,0" Grid.Row="1" Text="Hobby:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
-                   Name="match_hobby"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" Text="Bio:" TextWrapping="Wrap" VerticalAlignment="Top" Height="152" Width="203" Grid.ColumnSpan="2" Grid.RowSpan="3"
-                   Name="match_bio"/>
-        <Image Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="140" Margin="0,48,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Width="139" Source="Images/dating4.png" Grid.Row="1"/>
-        <Image Grid.Column="4" HorizontalAlignment="Center" Height="77" Margin="0,36,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100" Source="Images/dating1.png"/>
-        <Image Grid.Column="4" HorizontalAlignment="Center" Height="68" Grid.RowSpan="2" Grid.Row="2" VerticalAlignment="Center" Width="100" Source="Images/dating2.png"/>
-        <Image Grid.Column="4" HorizontalAlignment="Center" Height="100" Margin="0,20,0,0" Grid.RowSpan="2" Grid.Row="4" VerticalAlignment="Top" Width="100" Source="Images/dating3.png"/>
+        <Button x:Name="Refresh" Content="Mehr Schnecken" Grid.Column="5" Grid.Row="5" HorizontalAlignment="Center" 
+                VerticalAlignment="Top" RenderTransformOrigin="0.338,-0.033" Height="52" Width="95" Margin="0,5,0,0" Click="refresh" />
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="50,20,0,0" Text="Dein Profil" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.153,-0.206" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="USER" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,49,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.153,-0.206" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="user_name" FontSize="14"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" Text="Alter:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="user_alter" FontSize="14"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,46,0,0" Grid.Row="1" Text="Hobby:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="user_hobby" FontSize="14"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="2" Text="Bio:" TextWrapping="Wrap" VerticalAlignment="Top" Height="152" Width="203" Grid.ColumnSpan="2" Grid.RowSpan="3"
+                   Name="user_bio" FontSize="14"/>
+
+
+        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="31,5,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.153,-0.206" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_name1"/>
+        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="31,20,0,0" Text="Alter:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_alter1"/>
+        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="31,35,0,0" Text="Hobby:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_hobby1"/>
+        <TextBlock Grid.Column="5"  HorizontalAlignment="Left" Margin="31,50,0,0" Text="Bio:" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="203" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                   Name="match_bio1"/>
+
+        <TextBlock Grid.Column="5" Grid.Row="1" HorizontalAlignment="Left" Margin="31,5,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.153,-0.206" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_name2"/>
+        <TextBlock Grid.Column="5"  Grid.Row="1" HorizontalAlignment="Left" Margin="31,20,0,0" Text="Alter:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_alter2"/>
+        <TextBlock Grid.Column="5"  Grid.Row="1" HorizontalAlignment="Left" Margin="31,35,0,0" Text="Hobby:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_hobby2"/>
+        <TextBlock Grid.Column="5"  Grid.Row="1" HorizontalAlignment="Left" Margin="31,50,0,0" Text="Bio:" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="203" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                   Name="match_bio2"/>
+
+        <TextBlock Grid.Column="5" Grid.Row="2" HorizontalAlignment="Left" Margin="31,5,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.153,-0.206" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_name3"/>
+        <TextBlock Grid.Column="5"  Grid.Row="2" HorizontalAlignment="Left" Margin="31,20,0,0" Text="Alter:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_alter3"/>
+        <TextBlock Grid.Column="5"  Grid.Row="2" HorizontalAlignment="Left" Margin="31,35,0,0" Text="Hobby:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_hobby3"/>
+        <TextBlock Grid.Column="5"  Grid.Row="2" HorizontalAlignment="Left" Margin="31,50,0,0" Text="Bio:" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="203" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                   Name="match_bio3"/>
+
+        <TextBlock Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" Margin="31,5,0,0" Text="Name:" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.153,-0.206" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_name4"/>
+        <TextBlock Grid.Column="5"  Grid.Row="3" HorizontalAlignment="Left" Margin="31,20,0,0" Text="Alter:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_alter4"/>
+        <TextBlock Grid.Column="5"  Grid.Row="3" HorizontalAlignment="Left" Margin="31,35,0,0" Text="Hobby:" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="203" Grid.ColumnSpan="2"
+                   Name="match_hobby4"/>
+        <TextBlock Grid.Column="5"  Grid.Row="3" HorizontalAlignment="Left" Margin="31,50,0,0" Text="Bio:" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="203" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                   Name="match_bio4"/>
+
 
     </Grid>
 </Window>

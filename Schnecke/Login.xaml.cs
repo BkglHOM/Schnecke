@@ -22,11 +22,53 @@ namespace Schnecke
         int pwkeydwnint = 0;
 
         string query;
+
+
         public Login()
         {
             
 
             InitializeComponent();
+        }
+
+        void loginlogik()
+        {
+
+
+            //Login Button
+            //mysqlcon = new MySqlConnection(GlobaleVariablen.sqlconnection);
+
+            query = "SELECT * FROM kunden WHERE KundenUsername = '" + Username.Text.Trim() + "' AND KundenPW = '" + Password.Password.Trim() + "'";
+            //SQL abfrage   sucht passende user wo UN und PW passen
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, GlobaleVariablen.sqlconnection);
+            //Genutzt um daten aus der DB zu ziehen   zieht alle die passen rein 
+            DataTable dt = new DataTable();
+            //Tabelle die die c# rafft
+            try
+            {
+                dataAdapter.Fill(dt);
+                //zieht daten in die tabelle aus der DB in den DT 
+            }
+            catch
+            {
+                //Fehlermeldung wegen Falschem DB PW
+                MessageBox.Show("Fehler bei der Datenbankanbindung Bitte im code GlobaleVariablen.sqlconnection deinen login eingeben");
+            }
+
+            if (dt.Rows.Count == 1)
+            {
+                //PK wird in die loginid gespeichert um zu wissen wer sich denn einloggt
+                GlobaleVariablen.loginid = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
+
+                //Main window wird generiert, geoffnet und das jetzige window geschlossen
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Falscher Login du Schnecke");
+            }
         }
 
 
@@ -37,7 +79,7 @@ namespace Schnecke
 
         }
 
-
+        //Username Text wird geloescht
         private void UsernameFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             int c = 0;
@@ -50,6 +92,7 @@ namespace Schnecke
    
         }
 
+        //Bei Enter im Username feld wird direkt auf das PW feld gewechselt
         private void UsernameKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key==Key.Enter)
@@ -64,6 +107,7 @@ namespace Schnecke
             
         }
 
+        //PW box loeschung
         private void PasswordKeydown(object sender, KeyEventArgs e)
         {
             
@@ -79,47 +123,15 @@ namespace Schnecke
                 loginlogik();
             }
         }
+
+        //Reg button
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
             registrierung registrierung = new registrierung();
             registrierung.Show();
             this.Close();
         }
-        void loginlogik()
-        {
-            
-
-            //Login Button
-            //mysqlcon = new MySqlConnection(GlobaleVariablen.sqlconnection);
-
-            query = "SELECT * FROM kunden WHERE KundenUsername = '" + Username.Text.Trim() + "' AND KundenPW = '" + Password.Password.Trim() + "'";
-            //SQL abfrage   sucht passende user wo UN und PW passen
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, GlobaleVariablen.sqlconnection);
-            //Genutzt um daten aus der DB zu ziehen   zieht alle die passen rein 
-            DataTable dt = new DataTable();
-            //Tabelle die die c# rafft
-            try
-            { 
-            dataAdapter.Fill(dt);
-            //zieht daten in die tabelle die C# rafft
-            }
-            catch
-            {
-                MessageBox.Show("Fehler bei der Datenbankanbindung Bitte im code deine login sachen schreiben");
-            }
-
-            if (dt.Rows.Count == 1)
-            {
-                GlobaleVariablen.loginid = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Falscher Login du Schnecke");
-            }
-        }
+        
 
         
     }
