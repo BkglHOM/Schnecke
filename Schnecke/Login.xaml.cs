@@ -29,6 +29,8 @@ namespace Schnecke
             InitializeComponent();
         }
 
+
+        //Login Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             loginlogik();
@@ -77,6 +79,12 @@ namespace Schnecke
                 loginlogik();
             }
         }
+        private void Reg_Click(object sender, RoutedEventArgs e)
+        {
+            registrierung registrierung = new registrierung();
+            registrierung.Show();
+            this.Close();
+        }
         void loginlogik()
         {
             
@@ -113,11 +121,6 @@ namespace Schnecke
             }
         }
 
-        private void Reg_Click(object sender, RoutedEventArgs e)
-        {
-            registrierung registrierung = new registrierung();
-            registrierung.Show();
-            this.Close();
-        }
+        
     }
 }

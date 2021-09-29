@@ -40,7 +40,7 @@ namespace Schnecke
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + "Bitte Datumsformat YYYY-MM-DD verwenden");
                 
             }
            
