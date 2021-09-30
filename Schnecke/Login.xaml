@@ -6,17 +6,27 @@
         xmlns:local="clr-namespace:Schnecke"
         mc:Ignorable="d"
         Title="Login" Height="450" Width="350"
-        AllowsTransparency="True" Background="Transparent"
-        WindowStyle="None" ResizeMode="NoResize">
+        
+        >
     <Grid>
-        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="93*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="61*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="88*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="3">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
 
-            <Border CornerRadius="10" Grid.RowSpan="2">
+            <Border Grid.RowSpan="2">
                 <Border.Background>
                     <LinearGradientBrush>
                         <GradientStop Color="Blue" Offset="0.0"/>
@@ -27,7 +37,7 @@
 
 
             <StackPanel VerticalAlignment="Center">
-                <Image Source="Images/House.png" Width="80"/>
+                <Image Source="/Images/house.png" Width="80"/>
                 <TextBlock Text="Schnecke"
                            FontWeight="Light"
                            FontFamily="helvetica"
@@ -44,7 +54,6 @@
                              FontWeight="Light"
                              Text="Username"
                              FontSize="20"
-                             HorizontalAlignment="Center"
                              Foreground="White"
                              Background="Transparent"
                              BorderThickness="0"
@@ -53,7 +62,10 @@
                              Opacity="0.5"
                              Height="25"
                              Margin="63,0,0,0"
-                             Name="Username"/>
+                             Name="Username" 
+                             GotKeyboardFocus="UsernameFocus" 
+                             KeyDown="UsernameKeyDown"
+                             />
                 </StackPanel>
                 <Border Width="250"
                         Height="2"
@@ -63,11 +75,11 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                    <PasswordBox FontFamily="Helvetica"
+                    <PasswordBox 
+                             FontFamily="Helvetica"
                              FontWeight="Light"
                              Password="Password"
                              FontSize="20"
-                             HorizontalAlignment="Center"
                              Foreground="White"
                              Background="Transparent"
                              BorderThickness="0"
@@ -76,7 +88,9 @@
                              Opacity="0.5"
                              Height="25"
                              Margin="63,0,0,0"
-                             Name="Password"/>
+                             Name="Password" 
+                             FocusableChanged="PasswordFocus" 
+                             KeyDown="PasswordKeydown"/>
                 </StackPanel>
                 <Border Width="250"
                         Height="2"
@@ -84,9 +98,9 @@
                         Opacity="0.5"/>
 
 
-                <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-                    <Button Width="100" Height="40" Content="Login" Margin="60,0,60,0" Click="Button_Click"/>
-                    <Button Width="100" Height="40" Content="Register"/>
+                <StackPanel Orientation="Horizontal" Margin="0,40,0,0" HorizontalAlignment="Center">
+                    <Button Width="100" Height="40" Margin="0,0,10,0" Content="Login" Click="Button_Click"/>
+                    <Button Width="100" Height="40" Margin="10,0,0,0" Content="Register" Click="Reg_Click"/>
                 </StackPanel>
 
             </StackPanel>
